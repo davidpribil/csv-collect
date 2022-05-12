@@ -53,7 +53,7 @@ def print_output(values, output_csv_path: Path):
     with output_csv_path.open("w") as fw:
         fw.writelines(
             [
-                f"{FIRST_COLUMN[idx]}\t{values[0]}\t{values[1]}\n"
+                f"{FIRST_COLUMN[idx]}\t" + "\t".join(values) + "\n"
                 for idx, values in enumerate(values_transposed)
             ]
         )
